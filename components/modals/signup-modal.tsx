@@ -14,6 +14,8 @@ import { Label } from "@/components/ui/label"
 
 import { useSignup } from "@/hooks/use-signup";
 
+import Image from "next/image";
+
 export const SignupModal = () => {
     const signUp = useSignup();
   return (
@@ -68,9 +70,25 @@ export const SignupModal = () => {
           <span className="mx-4 text-gray-500">or</span>
           <hr className="border-t border-gray-300 flex-grow" />
         </div>
-        <div className="flex items-center gap-5 justify-center">
-          <Button variant="outline" className="w-full">Sign up with Google</Button>
-          <Button variant="outline" className="w-full">Sign up with Facebook</Button>
+        <div className="flex items-center gap-x-1 justify-center w-full">
+          <Button variant="outline" className="flex items-center space-x-2 w-full">
+            <Image
+              src="/google.webp"
+              alt="google"
+              width={28}
+              height={28}
+            />
+            <span>Sign in with Google</span>
+          </Button>
+          <Button variant="outline" className="flex items-center space-x-3 w-full">
+            <Image
+              src="/facebook.webp"
+              alt="facebook"
+              width={22}
+              height={22}
+            />
+            <span>Sign in with Facebook</span>
+          </Button>
         </div>
         <DialogFooter className="pt-5 gap-2">
           <Button type="submit" className="w-full">Sign up</Button>
